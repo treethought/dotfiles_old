@@ -54,9 +54,6 @@ done
 
 unset config_files
 
-# Notify existing users that they should migrate to another variable.
-export ZSH='$ZSH is deprecated, use either $DOTFILES or $OHMYZSH instead.'
-
 # Better history
 # Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
 autoload -U up-line-or-beginning-search
