@@ -35,3 +35,5 @@
 
 [http]
         cookiefile = ~/.gitcookies
+[github]
+	user = treethought
