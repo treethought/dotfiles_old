@@ -65,13 +65,16 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   python
-  docker
   docker-compose
   osx
-  pipenv
+  #  zsh-autosuggestions
+  zsh-syntax-highlighting
+  #  zsh-nvm
+  emacs
 )
 
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
