@@ -13,4 +13,6 @@
 #   $ e .
 #   $ e /usr/local
 #   # => opens the specified directory in your editor
-exec "$EDITOR" "${1:-.}"
+# exec "$EDITOR" "${1:-.}"
+
+# NOTE: e is no longer set here, but instead with the oh-my-zsh emacs plugin

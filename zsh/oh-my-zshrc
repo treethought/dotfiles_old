@@ -69,7 +69,7 @@ plugins=(
   osx
   #  zsh-autosuggestions
   zsh-syntax-highlighting
-  #  zsh-nvm
+  zsh-nvm
   emacs
 )
 
