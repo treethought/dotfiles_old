@@ -1,0 +1,16 @@
+[
+	{
+		"name": "placerchat",
+		"rootPath": "/Users/cam/dito/placer/placerchat",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "flask-assistant",
+		"rootPath": "/Users/cam/projects/flask-assistant",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	}
+]
