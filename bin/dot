@@ -40,11 +40,6 @@ done
 
 export DOTFILES=$HOME/.dotfiles
 
-if test "$(expr substr $(uname -s) 1 5)" = "Linux"
-then
-	sudo apt-get update
-fi
-
 # Set macOS defaults
 #$DOTFILES/macos/set-defaults.sh
 
