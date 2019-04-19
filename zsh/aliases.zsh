@@ -20,9 +20,17 @@ alias up='ping 8.8.8.8'
 alias falias="alias | grep"
 
 alias pyc='find . -name "*.pyc" -exec rm -rf {} \;'
+alias grok='~/ngrok'
 
 alias -g L='|less'
 alias -g T='|tail'
 alias -g G='|grep'
 alias -g V='|view -'
 
+function lh() {	
+	if [ $# -eq 0 ]; then
+		open http://localhost:3000
+	else
+		open http://localhost:$1
+	fi
+}
