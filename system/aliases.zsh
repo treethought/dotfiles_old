@@ -41,4 +41,8 @@ alias ka="killall"
 alias h="history"
 alias q="exit"
 
-alias findport='lsof -i tcp:'
+# alias findport='lsof -i tcp:'
+
+function findport() {	
+    lsof -i tcp:$1
+}

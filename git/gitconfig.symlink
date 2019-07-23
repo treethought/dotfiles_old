@@ -34,6 +34,6 @@
         required = true
 
 [http]
-        cookiefile = ~/.gitcookies
+	cookiefile = /Users/cam/.gitcookies
 [github]
 	user = treethought

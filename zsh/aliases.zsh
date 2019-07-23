@@ -27,6 +27,24 @@ alias -g T='|tail'
 alias -g G='|grep'
 alias -g V='|view -'
 
+# joplin
+
+alias jj='joplin'
+alias ju='joplin use'
+alias jl='joplin ls -l'
+
+function jn() {
+	if [ $# -eq 0 ]; then
+		joplin mknote "$1"
+	fi
+}
+
+function jt() {
+	if [ $# -eq 0 ]; then
+		joplin mktodo "$1"
+	fi
+}
+
 function lh() {	
 	if [ $# -eq 0 ]; then
 		open http://localhost:3000
