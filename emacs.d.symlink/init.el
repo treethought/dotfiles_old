@@ -5,7 +5,7 @@
 ;; --------------------------------------
 
 
-(server-start)
+;; (server-start)
 (require 'package)
 
 (package-initialize)
@@ -321,7 +321,7 @@
    ;; WARNING!  Depending on the default font,
    ;; if the size is not supported very well, the frame will be clipped
    ;; so that the beginning of the buffer may not be visible correctly.
-   (set-face-attribute 'default nil :height 125))
+   (set-face-attribute 'default nil :height 145))
 
 
 ;; (global-display-line-numbers-mode t)
@@ -543,27 +543,44 @@
 (setq org-directory "~/Dropbox/org")
 (setq org-default-notes-file "~/Dropbox/org/notes.org")
 
-(setq org-agenda-files
-      '("~/Dropbox/org/notes.org" "~/Dropbox/org/refile.org" "~/Dropbox/org/cal.org"))
+(setq org-agenda-files '("~/Dropbox/org"))
 
-(setq org-refile-targets
-      '((nil :maxlevel . 1)
-        (org-agenda-files :maxlevel . 3)))
+(setq org-todo-keywords
+      '((sequence "TODO" "NEXT" "BLOCKED" "|" "DONE" "CANCELED")))
 
+
+(setq org-refile-targets '((nil :maxlevel . 9)
+                                (org-agenda-files :maxlevel . 9)))
+(setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
+(setq org-refile-use-outline-path t)                  ; Show full paths for refiling
 
 ;; I use C-c c to start capture mode
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key  (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "C-c b") 'org-switch)
+(global-set-key (kbd "C-c b") 'org-switchb)
 ;; remap refile to not overlap with eybrowse
 (global-set-key (kbd "C-c r") 'org-refile)
 
 (org-babel-do-load-languages
  'org-babel-load-languages '((shell . t)
-							(python . t)))
+							(python . t)
+                            (groovy . t)
+                            (java . t)))
 
+;; ALFRED WORKFLOW
 
+(defun make-orgcapture-frame ()
+  "Create a new frame and run org-capture."
+  (interactive)
+  (make-frame '((name . "remember") (width . 80) (height . 20)
+                (top . 400) (left . 300)
+                (font . "-apple-Monaco-medium-normal-normal-*-13-*-*-*-m-0-iso10646-1")
+                ))
+  (select-frame-by-name "remember")
+  (org-capture))
+
+;;; alfred-org-capture.el ends here
 
 ;; Remove empty LOGBOOK drawers on clock out
 (defun bh/remove-empty-drawer-on-clock-out ()
@@ -578,29 +595,47 @@
 
 ;; Capture templates for: TODO tasks, Notes, appointments, phone calls, meetings, and org-protocol
 (setq org-capture-templates
-      (quote (("t" "todo" entry (file "~/org/notes.org")
+      (quote (("t" "todo" entry (file "~/Dropbox/org/notes.org")
                "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("b" "Bookmark" entry (file+headline "~/org/notes.org" "Bookmarks")
+              ("b" "Bookmark" entry (file+headline "~/Dropbox/org/notes.org" "Bookmarks")
 	           "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n" :empty-lines 1)
-              ("r" "respond" entry (file "~/org/notes.org")
+              ("r" "respond" entry (file "~/Dropbox/org/notes.org")
                "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
-              ("n" "note" entry (file "~/org/notes.org")
+              ("n" "note" entry (file "~/Dropbox/org/notes.org")
                "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
-              ("j" "Journal" entry (file+datetree "~/org/diary.org")
-               "* %?\n%U\n" :clock-in t :clock-resume t)
-              ("w" "org-protocol" entry (file "~/org/notes.org")
+              ("j" "Journal entry" entry (function org-journal-find-location)
+                               "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")
+              ("w" "org-protocol" entry (file "~/Dropbox/org/notes.org")
                "* TODO Review %c\n%U\n" :immediate-finish t)
-              ("m" "Meeting" entry (file "~/org/notes.org")
+              ("m" "Meeting" entry (file "~/Dropbox/org/notes.org")
                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
-			   ("e" "Event" entry (file "~/org/cal.org")
+			   ("e" "Event" entry (file "~/Dropbox/org/cal.org")
                "* EVENT %? :EVENT:\n%^t\n%^G\n%a")
-              ("p" "Phone call" entry (file "~/org/notes.org")
-               "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
-              ("h" "Habit" entry (file "~/org/notes.org")
-               "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
+              ("p" "Phone call" entry (file "~/Dropbox/org/notes.org")
+               "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t))))
+
+
+;; ORG_JOURNAL
+(use-package org-journal
+  :ensure t
+  :defer t
+  :custom
+  (org-journal-dir "~/Dropbox/org/journal/")
+  (org-journal-date-format "%A, %d %B %Y")
+  (org-journal-enable-agenda-integration t))
+
+ (defun org-journal-find-location ()
+  ;; Open today's journal, but specify a non-nil prefix argument in order to
+  ;; inhibit inserting the heading; org-capture will insert the heading.
+  (org-journal-new-entry t)
+  ;; Position point on the journal's top-level heading so that org-capture
+  ;; will add the new entry as a child entry.
+  (goto-char (point-min)))
 
 
 
+;; key binding to schedule a todo in a future journal entry
+(global-set-key (kbd "C-c C-t") 'org-journal-new-scheduled-entry)
 ;; make a shell script executable automatically on save
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
