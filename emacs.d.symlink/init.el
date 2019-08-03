@@ -546,13 +546,19 @@
 (setq org-agenda-files '("~/Dropbox/org"))
 
 (setq org-todo-keywords
-      '((sequence "TODO" "NEXT" "BLOCKED" "|" "DONE" "CANCELED")))
+      '((sequence "TODO" "NEXT" "BLOCKED" "|" "DONE" "CANCELLED")))
 
 
 (setq org-refile-targets '((nil :maxlevel . 9)
                                 (org-agenda-files :maxlevel . 9)))
-(setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
-(setq org-refile-use-outline-path t)                  ; Show full paths for refiling
+
+;; the following 2 lines allow refiling to a
+;; file (top-level) or to a subheading
+(setq org-outline-path-complete-in-steps nil)
+(setq org-refile-use-outline-path 'file)
+
+;; allow creating new parent during refile
+(setq org-refile-allow-creating-parent-nodes 'confirm)
 
 ;; I use C-c c to start capture mode
 (global-set-key (kbd "C-c c") 'org-capture)
