@@ -530,9 +530,9 @@
 
 ;; GO
 ;; ----------
-(use-package go)
-(autoload 'go-mode "go-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+;; (use-package go)
+;; (autoload 'go-mode "go-mode" nil t)
+;; (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
 
 
 ;; ORG MODE
@@ -622,7 +622,8 @@
   :custom
   (org-journal-dir "~/Dropbox/org/journal/")
   (org-journal-date-format "%A, %d %B %Y")
-  (org-journal-enable-agenda-integration t))
+  (org-journal-enable-agenda-integration t)
+  (org-journal-file-format "%Y%m%d.org"))
 
  (defun org-journal-find-location ()
   ;; Open today's journal, but specify a non-nil prefix argument in order to
@@ -640,8 +641,10 @@
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
 
-
-
+;; org exporter backends
+(require 'ox-md)
+(require 'ox-pandoc)
+;; org-board for bookmarks
 
 
 ;; ;; duck-duck-go
