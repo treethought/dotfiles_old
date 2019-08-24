@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+ps cax | grep yabai > /dev/null
+if [ $? -eq 0 ]; then
+  yabai=/usr/local/bin/yabai
+  jq=/usr/local/bin/jq
+  active=$($yabai -m query --spaces --space | $jq '.index')
+  total=$($yabai -m query --spaces | $jq length)
+  title=$($yabai -m query --windows --window | $jq '.title')
+  app=$($yabai -m query --windows --window | $jq '.app')
+  echo "$app - $title"
+else
+  echo ""
+fi

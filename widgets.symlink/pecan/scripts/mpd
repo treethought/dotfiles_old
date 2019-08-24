@@ -1,0 +1,10 @@
+#!/bin/bash
+# depends on mpd
+RESULTX="$(/usr/local/bin/mpc; echo x)"
+RESULT="${RESULTX%x}"
+
+ echo "$(echo "$RESULT" | grep - | awk -F"-" '{print $1}')@$(echo "$RESULT" | grep - | awk -F"-" '{print $2}')@$(echo "$RESULT" | grep / | awk -F" " '{print $4}' | grep -o '[0-9/]\+')@$(echo "$RESULT" | grep '\[' | awk -F" " '{print $1}')@$(echo "$RESULT" | grep / | awk -F" " '{print $2}' | grep -o '[0-9/]\+')@"
+
+
+# see https://github.com/mps-youtube/mps-youtube/issues/877
+# for use with mps-youtube

@@ -1,0 +1,130 @@
+# command: "bash pecan/scripts/battery"
+command: "bash pecan/scripts/mpd"
+
+
+refreshFrequency: 100
+
+# render: (output) ->
+#   "<div class='screen'><div class='pecannowplaying'>#{output}</div></div>"
+
+
+
+
+
+# refreshFrequency: '2s' # ms
+
+render: (output) ->
+  values = output.split("@")
+  values = output.split('@')
+  artist = @cutWhiteSpace(values[0])
+  song = @cutWhiteSpace(values[1])
+  elapsed = values[2]
+  if artist == ""
+    return ""
+  else
+    """
+      <link rel="stylesheet" type="text/css" href="./style.css" />
+      <div class='pecannowplaying'>#{values}</div>
+    """
+
+style: """
+  color: #66d9ef
+  font: 12px Hack
+  left: 8px
+  width:100vw
+  height: 16px
+"""
+
+# style: """
+#   color: #66d9ef
+#   font: 12px Hack
+#   left: 8px
+#   bottom: 40px
+#   width:850px
+#   height: 16px
+#   cursor: pointer;
+# """
+
+cutWhiteSpace: (text) ->
+  if text
+    text.replace /^\s+|\s+$/g, ""
+    return text
+
+update: (output, domEl) ->
+
+   values = output.split('@')
+   artist = @cutWhiteSpace(values[0]) or ""
+   song = @cutWhiteSpace(values[1]) or ""
+   elapsed = values[2]
+   status = @cutWhiteSpace(values[3])
+   trackCount = @cutWhiteSpace(values[4])
+
+   if artist == ""
+    return
+  
+   if artist.length >= 25
+     artist = artist.substring(0,24)
+     artist = @cutWhiteSpace(artist)
+
+   if song.length >= 25
+     song = song.substring(0,24)
+     song = @cutWhiteSpace(song)
+     song = song + "…"
+
+   # Create mpdHtmlString
+   mpdHtmlString = "<span class='pecannowplaying'></span><span class='white'> (#{trackCount}) #{artist} - #{song}&nbsp</span>"
+
+   emptySpace = (80 - artist.length - song.length - 3)
+
+   elapsedCounter = parseInt(elapsed * emptySpace / 100 )
+   remainingCounter = emptySpace - elapsedCounter - 1
+
+
+
+   mpdHtmlString += "<span>"
+   i = 0
+   while i <= elapsedCounter
+     i += 1
+     mpdHtmlString += "●"
+
+   mpdHtmlString += "</span>"
+   mpdHtmlString += "<span class='white'>"
+
+   i = 0
+   while i <= remainingCounter
+     i += 1
+     mpdHtmlString += "◦"
+
+   mpdHtmlString += "</span>"
+
+  #  if artist != ""
+  #    mpdHtmlString += "<span class='pecannowplaying icon prev'></span>" + " "
+
+  #    if status == "[playing]"
+  #       mpdHtmlString += "<span class='pecannowplaying icon pause'>◁</span>" + " "
+  #    else
+  #       mpdHtmlString += "<span class='pecannowplaying icon play'>◁</span>" + " "
+
+  #    mpdHtmlString += "<span class='pecannowplaying icon next'>◁</span>"
+
+
+   $(domEl).find('.pecannowplaying').html(mpdHtmlString)
+
+
+  #  isNowPlayingVis = true
+
+  #  $(".switch").on "click", ->
+  #    if isNowPlayingVis == false
+  #      $(".pecannowplaying").css("opacity", "1")
+  #      $(".pecannowplaying").css("z-index", "3")
+  #      isNowPlayingVis = true
+  #    else
+  #      $(".pecannowplaying").css("opacity", "0")
+  #      $(".pecannowplaying").css("z-index", "-1")
+  #      isNowPlayingVis = false
+
+  #  $(".pause").on "click", => @run "/usr/local/bin/mpc pause"
+  #  $(".play").on "click",  => @run "/usr/local/bin/mpc play"
+  #  $(".next").on "click",  => @run "/usr/local/bin/mpc next"
+  #  $(".prev").on "click",  => @run "/usr/local/bin/mpc prev"
+
