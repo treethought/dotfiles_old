@@ -207,6 +207,16 @@
 ;; NAVIGATION
 ;; --------------------
 
+
+
+;; mouse support for iterm2
+            ;; ITERM2 MOUSE SUPPORT
+    (unless window-system
+      (require 'mouse)
+      (xterm-mouse-mode t)
+      (defun track-mouse (e))
+      (setq mouse-sel-mode t)
+    )
 ;; C-a to to move to first non-whitespace of line
 (use-package crux
     :ensure t
@@ -260,20 +270,53 @@
 
 ;; APPEARANCE
 ;;--------------------
-;; (use-package gruvbox-theme
-;;   :config
-;;   (load-theme 'gruvbox-dark-hard))
+(use-package gruvbox-theme
+  :config
+  (load-theme 'gruvbox-dark-hard))
+
+;; dont set background color when opening in terminal
+
+(defun on-frame-open (frame)
+  (if (not (display-graphic-p frame))
+    (set-face-background 'default "unspecified-bg" frame)))
+(on-frame-open (selected-frame))
+(add-hook 'after-make-frame-functions 'on-frame-open)
+
+(defun on-after-init ()
+  (unless (display-graphic-p (selected-frame))
+    (set-face-background 'default "unspecified-bg" (selected-frame))))
+
+(add-hook 'window-setup-hook 'on-after-init)
+
+
+
+;; pywal
+;; (use-package ewal
+;;   :init (setq ewal-use-built-in-always-p t
+;;               ewal-built-in-palette "sexy-material"))
+
+
+;; (use-package ewal
+;;   :straight (ewal
+;;              :type git
+;;              :files ("ewal.el" ("palettes" "palettes/*"))
+;;              :host gitlab
+;;              :branch "develop"
+;;              :repo "jjzmajic/ewal")
+;;   :init (setq ewal-use-built-in-on-failure t
+;;               ewal-built-in-palette "dkeg-bulb"))
+
 
 (menu-bar-mode -1)
-(use-package monokai-theme
-  :init
-  :config
-  (load-theme 'monokai))
+;; (use-package monokai-theme
+;;   :init
+;;   :config
+;;   (load-theme 'monokai))
 
-  (setq ;; foreground and background
-      monokai-foreground     "#ABB2BF"
-      monokai-background     "#0A0007")
-      ;; highlights and comments
+;;    (setq ;; foreground and background
+;;        ;; monokai-foreground     "#ABB2BF"
+;;        monokai-background     "#2f2c37")
+;; ;;       ;; highlights and comments
       ;; monokai-comments       "#F8F8F0"
       ;; monokai-emphasis       "#282C34"
       ;; monokai-highlight      "#FFB269"
