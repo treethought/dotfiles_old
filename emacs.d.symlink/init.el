@@ -581,8 +581,6 @@
 ;; ORG MODE
 ;; --------------------
 
-
-
 (setq org-directory "~/Dropbox/org")
 (setq org-default-notes-file "~/Dropbox/org/notes.org")
 
@@ -610,6 +608,12 @@
 (global-set-key (kbd "C-c b") 'org-switchb)
 ;; remap refile to not overlap with eybrowse
 (global-set-key (kbd "C-c r") 'org-refile)
+(global-set-key (kbd "C-c f") 'helm-org-rifle)
+(global-set-key (kbd "C-c v") 'org-brain-visualize)
+
+
+;; allow toggling of wrapping lines
+;; (define-key org-mode-map "\M-q" 'toggle-truncate-lines)
 
 (org-babel-do-load-languages
  'org-babel-load-languages '((shell . t)
@@ -681,6 +685,25 @@
   ;; Position point on the journal's top-level heading so that org-capture
   ;; will add the new entry as a child entry.
   (goto-char (point-min)))
+
+;; org-bullets
+(use-package org-bullets
+    :hook (org-mode . org-bullets-mode))
+
+;; ORG RIFLE
+(use-package helm-org-rifle)
+
+ (use-package org-brain :ensure t
+   :init
+   (setq org-brain-path "~/Dropbox/org/brain")
+   :config
+   (setq org-id-track-globally t)
+   (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
+   (push '("x" "Brain" plain (function org-brain-goto-end)
+           "* %i%?" :empty-lines 1)
+         org-capture-templates)
+   (setq org-brain-visualize-default-choices 'all)
+   (setq org-brain-title-max-length 12))
 
 
 
