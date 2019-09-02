@@ -15,7 +15,7 @@ yabai -m config status_bar_clock_icon        
 yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             first_child
-yabai -m config window_topmost               off
+yabai -m config window_topmost               on
 yabai -m config window_opacity               off
 yabai -m config window_shadow                float
 yabai -m config window_border                off
@@ -51,8 +51,8 @@ yabai -m config active_window_opacity 1.0
 yabai -m config normal_window_opacity 0.9
 echo "yabai configuration loaded.."
 
-yabai -m config window_border on
-yabai -m config window_border_width 2
+# yabai -m config window_border on
+# yabai -m config window_border_width 2
 # yabai -m config active_window_border_color 0xfcba03
 # yabai -m config normal_window_border_color 0xff505050
 # yabai -m config insert_window_border_color 0xffd75f5f
@@ -72,8 +72,31 @@ yabai -m config window_border_width 2
 # yabai -m rule --add app="^mpv$" display=2 space=1 grid=1:1:0:0
 # yabai -m rule --add title="^iTerm$" display=2 space=1
 
+yabai -m rule add app-"^Emacs$" opacity=0.5
+
 # # unmanaged apps (float)
-# yabai -m rule --add title="^Preferences$" manage=off
-# yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add title="^Preferences$" manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
 
 
+# for pywal theme
+source ~/.cache/wal/colors.sh # pywal scheme - update if needed
+
+# yabai template colours
+CBACK=$(echo $background | sed 's/#//')
+CFORE=$(echo $foreground | sed 's/#//')
+CACTV=$(echo $color3 | sed 's/#//')
+CNORM=$(echo $color1 | sed 's/#//')
+CINSE=$(echo $foreground | sed 's/#//')
+
+yabai -m config status_bar                   off
+yabai -m config status_bar_background_color  0xff$CBACK
+yabai -m config status_bar_foreground_color  0xff$CFORE
+
+yabai -m config window_border                on
+yabai -m config window_border_width          2
+yabai -m config active_window_border_color   0xff$CACTV
+yabai -m config normal_window_border_color   0xff$CNORM
+yabai -m config insert_window_border_color   0xff$CINSE

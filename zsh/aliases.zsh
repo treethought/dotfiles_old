@@ -27,6 +27,8 @@ alias -g T='|tail'
 alias -g G='|grep'
 alias -g V='|view -'
 
+alias em='emacsclient -t'
+
 # joplin
 
 alias jj='joplin'
@@ -52,3 +54,7 @@ function lh() {
 		open http://localhost:$1
 	fi
 }
+
+alias music="ncmpcpp"
+
+alias gps="ps aux | grep -v grep | grep"
