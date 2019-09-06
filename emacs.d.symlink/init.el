@@ -11,6 +11,13 @@
 (package-initialize)
 
 
+(setq package-archives '(("gnu" . "http://mirrors.163.com/elpa/gnu/")
+
+("melpa" . "https://melpa.org/packages/")
+
+("org" . "http://orgmode.org/elpa/")))
+
+
 ;; package sources
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 ;; (setq package-enable-at-startup nil)
@@ -98,7 +105,7 @@
 (set-window-buffer nil (current-buffer)) ; Use them now.
 
 ;; wrap lines
-(global-visual-line-mode -1)
+(global-visual-line-mode t)
 
 
 ;; turn off toolbar and scroll bar
@@ -374,6 +381,10 @@
 ;; Set ns-appearance to dark for white title text and nil for black title text.
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
+
+
+
+
 
 
 ;; BASIC PROGRAMMING SETTINGS

@@ -10,3 +10,8 @@ atom.symlink/blob-store
 atom.symlink/recovery
 
 git/gitconfig.local.symlink
+
+emacs.d.symlink/
+!init.el
+
+joplin/resources
