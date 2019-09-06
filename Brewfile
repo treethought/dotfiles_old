@@ -1,54 +1,53 @@
-cask_args appdir: '/Applications'
-
-tap 'homebrew/bundle'
-# tap "homebrew/cask"
-
-brew 'ack'
-brew 'coreutils'
-# brew 'docker'
-# brew 'go'
-# brew "fish"
-brew 'ffmpeg'
-brew 'flac'
-# brew "heroku/brew/heroku"
-brew "mas"
-brew "pandoc"
+tap "caskroom/cask"
+tap "cjbassi/gotop"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "koekeishiya/formulae"
+tap "mopidy/mopidy"
+tap "railwaycat/emacsmacport"
+brew "ack"
 brew "python"
+brew "python@2"
+brew "cookiecutter"
+brew "coreutils"
+brew "curl"
+brew "flac"
+brew "ffmpeg"
+brew "git-flow"
+brew "gitlab-runner"
+brew "lastpass-cli"
+brew "mas"
+brew "youtube-dl"
+# brew "mpv"
+# brew "mps-youtube"
+brew "ncmpcpp"
+brew "neofetch"
+brew "node"
+brew "pandoc"
 brew "pipenv"
+brew "postgresql"
 brew "redis"
-brew "heroku
-# brew "ta-lib"
-
-# brew 'libcaca', args: ['with-imlib2']
-brew 'openssl'
-brew 'node'
-brew 'postgresql'
-# brew 'ruby-build'
-# brew 'rbenv'
-brew 'unrar'
-brew 'wget'
-brew 'yarn'
-brew 'youtube-dl'
-brew 'zsh'
-brew 'zsh-completions'
-
-# cask 'atom'
-# cask 'firefox'
-# cask 'google-chrome'
-# cask 'iterm2'
-# cask 'karabiner'
-# cask 'launchbar'
-# cask 'qbittorrent'
-# cask 'the-unarchiver'
-# cask 'slack'
-# cask 'sublime-text'
-# cask 'telegram-desktop'
-# cask 'tunnelbear'
-# cask 'vlc'
-
-# mas "Simplenote", id: 692867256
-# mas "LastPass", id: 926036361
-# mas "Magnet", id: 441258766
-# mas "Harvest", id: 506189836
-# mas "The Unarchiver", id: 425424353
-# mas "LimeChat" , id: 692867256
+brew "tldr"
+brew "unrar"
+brew "wget"
+brew "yarn"
+brew "zsh"
+brew "zsh-completions"
+brew "cjbassi/gotop/gotop"
+brew "koekeishiya/formulae/skhd"
+brew "koekeishiya/formulae/yabai"
+brew "mopidy/mopidy/mopidy"
+# cask "gimp"
+# cask "minikube"
+# cask "ubersicht"
+# cask "vlc"
+# cask "railwaycat/emacsmacport/emacs-mac"
+# mas "agency.rain.reverb-macos", id: 1144697855
+# mas "com.amazon.Kindle", id: 405399194
+# mas "com.apple.dt.Xcode", id: 497799835
+# mas "com.evernote.Evernote", id: 406056744
+# mas "com.getharvest.harvestxapp", id: 506189836
+# mas "com.lastpass.LastPass", id: 926036361
+# mas "cx.c3.theunarchiver", id: 425424353
