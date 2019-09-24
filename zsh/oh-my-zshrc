@@ -71,6 +71,7 @@ plugins=(
   zsh-autosuggestions
   # zsh-syntax-highlighting
   z
+  fasd
 )
 
 source $ZSH/oh-my-zsh.sh

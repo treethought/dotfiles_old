@@ -47,7 +47,7 @@ function jt() {
 	fi
 }
 
-function lh() {	
+function lh() {
 	if [ $# -eq 0 ]; then
 		open http://localhost:3000
 	else
@@ -58,3 +58,14 @@ function lh() {
 alias music="ncmpcpp"
 
 alias gps="ps aux | grep -v grep | grep"
+
+# standalone magit script
+alias magit="emacs -q --load ~/.magit/init.el"
+
+alias hdi="howdoi"
+
+# fasd aliases
+alias v="nvim"
+alias vf="f -e nvim"
+alias vr="f -t -e vim -b viminfo"
+alias vp="d -e nvim"

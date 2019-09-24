@@ -86,3 +86,9 @@ cat ~/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
+
+# set pywal colors to env vars
+. ~/.cache/wal/colors.sh
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
