@@ -16,5 +16,12 @@ emacs.d.symlink/
 
 joplin/resources
 
+# ignore most of conifg dir
 /config.symlink/*
+
+# include nvim
 !config.symlink/nvim/
+config.symlink/nvim/.netrwhist
+
+# include kitty
+!config.symlink/kitty/
