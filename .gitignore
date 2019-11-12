@@ -15,3 +15,6 @@ emacs.d.symlink/
 !init.el
 
 joplin/resources
+
+/config.symlink/*
+!config.symlink/nvim/
