@@ -72,6 +72,8 @@ plugins=(
   # zsh-syntax-highlighting
   z
   fasd
+  kubectl
+  minikube
 )
 
 source $ZSH/oh-my-zsh.sh
