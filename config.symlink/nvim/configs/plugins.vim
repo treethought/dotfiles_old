@@ -108,6 +108,9 @@ Plug 'vimwiki/vimwiki'
 " integrate vimwiki with taskwarrior
 Plug 'tbabej/taskwiki'
 
+" todo.txt
+Plug 'freitass/todo.txt-vim'
+
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
@@ -122,8 +125,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'mzlogin/vim-markdown-toc'
 
 " Pipenv
-Plug   'plytophogy/vim-virtualenv'
-Plug   'PieterjanMontens/vim-pipenv'
+Plug 'plytophogy/vim-virtualenv'
+Plug 'PieterjanMontens/vim-pipenv'
 
 " readline mappings for insert mode
 Plug 'tpope/vim-rsi'

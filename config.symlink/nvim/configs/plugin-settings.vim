@@ -72,6 +72,9 @@ let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{'path': '~/notes/',
                        \ 'syntax': 'markdown', 'ext': '.md'}, {'path': '~/joplin_export/',
                        \ 'syntax': 'markdown', 'ext': '.md'}]
+" Taskwiki
+let g:taskwiki_syntax = 'markdown'
+
 
 """""""""""
 " Vista  "
