@@ -28,6 +28,9 @@ nmap <Leader>rr :source ~/.config/nvim/init.vim<CR>
 
 nmap <Leader>ss :mks!<CR>
 
+" open fork for current repo
+nmap <Leader>of :!fork open .<CR>
+
 
 " Window Navigation
 " Navigate to left window.
@@ -90,33 +93,6 @@ nnoremap  <Leader>ce  :<C-u>CocList extensions<cr>
 nnoremap  <Leader>cc  :<C-u>CocList commands<cr>
 " Find symbol of current document
 nnoremap <Leader>co  :<C-u>CocList outline<cr>
-
-
-" Git keybinds
-" Git status
-" nnoremap  <Leader>gs  :Gstatus<cr>
-" Git diff in split window
-" nnoremap  <Leader>gd  :Gdiffsplit<cr>
-" " Git commit
-" nnoremap  <Leader>gc  :Gcommit<cr>
-" " Git push 
-" nnoremap  <Leader>gP  :Gpush<cr>
-" " Git pull 
-" nnoremap  <Leader>gp  :Gpull<cr>
-" " Git move 
-" nnoremap  <Leader>gm  :Gmove<cr>
-" " Git merge 
-" nnoremap  <Leader>gM  :Gmerge<cr>
-" " browse current file on web
-" nnoremap  <Leader>gb  :Gbrowse<cr>
-" " browse current line on web
-" nnoremap  <Leader>gbl  :CocCommand git.browserOpen<cr>
-" " View chunk information in preview window. 
-" nnoremap  <Leader>gh  :CocCommand git.chunkInfo<cr>
-" " View commit information in preview window. 
-" nnoremap  <Leader>gsc  :CocCommand git.showCommit<cr>
-" " Toggle git gutter sign columns
-" nnoremap  <Leader>gg  :CocCommand git.toggleGutters<cr>
 
 
 " Magit
