@@ -35,7 +35,8 @@ set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
 autocmd FileType text,markdown setlocal spell
 
 " Limit line length for text files
-autocmd FileType text,markdown,tex setlocal textwidth=100
+autocmd FileType text,markdown,tex,vimwiki setlocal textwidth=80
+
 
 " Don't automatically collapse markdown
 set conceallevel=0
