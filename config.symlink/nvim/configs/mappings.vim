@@ -110,4 +110,13 @@ nmap <Leader>fn :FZF ~/notes<CR>
 " nmap <Leader>gn :
 
 " search vimiwiki notes
-nmap <Leader>n :
+" fix spelling error to top suggestion
+nmap <Leader>z mz[s1z=e'z
+
+" quick vertical split terminal
+nmap <Leader>vv :vs\|:terminal<CR>
+
+" open todo.txt file
+nmap <Leader>ot :e ~/notes/todo.txt<CR>
+
+nmap <Leader>fn :FZF ~/notes<CR>
