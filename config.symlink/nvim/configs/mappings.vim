@@ -120,3 +120,6 @@ nmap <Leader>vv :vs\|:terminal<CR>
 nmap <Leader>ot :e ~/notes/todo.txt<CR>
 
 nmap <Leader>fn :FZF ~/notes<CR>
+" lazydocker and lazygit
+nnoremap <silent> <Leader>ld :call ToggleLazyDocker()<CR>
+nnoremap <silent> <Leader>lg :call ToggleLazyGit()<CR>
