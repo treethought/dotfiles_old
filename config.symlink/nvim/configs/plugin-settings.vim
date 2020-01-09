@@ -393,7 +393,9 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-
+" include .venv folders to detemrine workspaces
+" (useful for multiple python interpreters in a single workspace (project))
+autocmd FileType python let b:coc_root_patterns = ['.venv', '.vim', '.git']
 """"""""""
 "Markdown"
 """"""""""
