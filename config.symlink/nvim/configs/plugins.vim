@@ -131,7 +131,18 @@ Plug 'PieterjanMontens/vim-pipenv'
 " readline mappings for insert mode
 Plug 'tpope/vim-rsi'
 
+" colorize color codes
+Plug 'chrisbra/Colorizer'
+
+" Ranger integration
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 " Autosaving
 " Plug '907th/vim-auto-save'
+
+Plug 'voldikss/vim-floaterm'
+
+Plug 'hashivim/vim-terraform'
+
 
 call plug#end()

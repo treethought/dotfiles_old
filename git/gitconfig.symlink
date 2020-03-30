@@ -37,3 +37,9 @@
 	cookiefile = /Users/cam/.gitcookies
 [github]
 	user = treethought
+[user]
+	name = Cam Sweeney
+	email = cameron.sweeney@ditoweb.com
+[mergetool "gitblade"]
+	cmd = \"/usr/lib/gitblade/gitblade\" -c \"\"
+	trustExitCode = true

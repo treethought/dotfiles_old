@@ -51,7 +51,7 @@ function lh() {
 	if [ $# -eq 0 ]; then
 		open http://localhost:3000
 	else
-		open http://localhost:$1
+		open "http://localhost:$1"
 	fi
 }
 
@@ -69,3 +69,11 @@ alias v="nvim"
 alias vf="f -e nvim"
 alias vr="f -t -e vim -b viminfo"
 alias vp="d -e nvim"
+
+# alias python=python3.7
+# alias pip=pip3
+
+alias gg="lazygit"
+alias r="ranger"
+
+alias tt="todoist"

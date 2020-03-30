@@ -36,10 +36,11 @@
 	
   "python.jediEnabled": false,
   "python.sortImports.path": "/usr/local/bin/isort",
-  "python.formatting.blackPath": "/usr/local/bin/black",
+  "python.formatting.blackPath": "/home/cam/.local/bin/black",
   "python.formatting.provider": "black",
-  "python.pipenvPath": "/usr/local/bin/pipenv",
+  "python.pipenvPath": "/home/cam/.local/bin/pipenv",
   "python.envFile": "${workspaceFolder}/.env",
+  "python.venvPath": "/home/cam/.local/share/virtualenvs",
 	
 
   "suggest.completionItemKindLabels": {
@@ -68,8 +69,19 @@
     "reference": "\uf87a",
     "typeParameter": "\uf278",
     "default": "\uf29c"
-  }
+  },
 
 
-
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": ["terraform"],
+      "initializationOptions": {}
+    }
+  },
+  "yaml.schemas": {
+      "kubernetes": "/*.yaml",
+  },
+  "yaml.validate": true
 }
+

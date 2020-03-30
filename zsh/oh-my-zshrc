@@ -67,7 +67,7 @@ plugins=(
   git
   python
   docker-compose
-  osx
+  # osx
   zsh-autosuggestions
   # zsh-syntax-highlighting
   z

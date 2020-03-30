@@ -55,6 +55,10 @@ function! ToggleLazyDocker()
     call ToggleTerm('lazydocker')
 endfunction
 
+function! ToggleJoplin()
+    call ToggleJoplin('joplin')
+endfunction
+
 
 function! OnTermExit(job_id, code, event) dict
     if a:code == 0
@@ -62,4 +66,22 @@ function! OnTermExit(job_id, code, event) dict
     endif
 endfunction
 
-" REQUIRED FOR LAZYGIT
+" lazygit wrapper for Floaterm
+
+" function! floaterm#wrapper#lazygit#() abort
+"   let s:lazygit_tmpfile = tempname()
+"   let cmd = 'lazygit' . s:lazygit_tmpfile
+"   return [cmd, {'on_exit': funcref('s:lazygit_callback')}, v:false]
+" endfunction
+
+" function! s:lazygit_callback(...) abort
+"   if filereadable(s:lazygit_tmpfile)
+"     let filenames = readfile(s:lazygit_tmpfile)
+"     if !empty(filenames)
+"       call floaterm#hide()
+"       for filename in filenames
+"         execute 'edit ' . fnameescape(filename)
+"       endfor
+"     endif
+"   endif
+" endfunction

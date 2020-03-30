@@ -335,7 +335,8 @@ let g:coc_global_extensions = [
       \'coc-yaml',
       \'coc-template',
       \'coc-tabnine',
-      \'coc-utils'
+      \'coc-utils',
+      \'coc-flutter'
       \]
 
 " Remap keys for gotos
@@ -452,3 +453,4 @@ set conceallevel=1
 " let g:auto_save        = 1
 " let g:auto_save_silent = 1
 " let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
+

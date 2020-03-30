@@ -7,7 +7,7 @@
 "
 "***********************************************************************************
 
-
+set notermguicolors
 
 " Colorscheme
 set background=dark
@@ -21,6 +21,7 @@ augroup specify_filetype
     autocmd!
     autocmd BufRead,BufNewFile *.md set filetype=markdown
     autocmd BufRead,BufNewFile *.txt set filetype=text
+    autocmd BufRead,BufNewFile *.Tiltfile set filetype=python
 augroup END
 
 " set title for terminal tab
@@ -88,18 +89,22 @@ set showmatch
 
 " Save undo tree.
 "set undofile
+"
+set nobackup
+set nowb
+set noswapfile
 
 " Do not back up temporary files.
-set backupskip=/tmp/*,/private/tmp/*"
+" set backupskip=/tmp/*,/private/tmp/*"
 
-" Store backup files in one place.
-set backupdir^=$HOME/.config/nvim//storage/backups//
+" " Store backup files in one place.
+" set backupdir^=$HOME/.config/nvim/storage/backups//
 
-" Store swap files in one place.
-set dir^=$HOME/.config/nvim//storage/swaps//
+" " Store swap files in one place.
+" set dir^=$HOME/.config/nvim/storage/swaps//
 
-" Store undo files in one place.
-set undodir^=$HOME/.config/nvim/storage/undos//
+" " Store undo files in one place.
+" set undodir^=$HOME/.config/nvim/storage/undos//
 
 " No line wrapping
 set nowrap

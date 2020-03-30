@@ -98,6 +98,8 @@ nnoremap <Leader>co  :<C-u>CocList outline<cr>
 " Magit
 nmap <Leader>gs :Magit<CR>
 
+" NERDTree
+nmap <Leader>n :NERDTreeToggle<CR>
 
 
 " FZF 
@@ -123,3 +125,15 @@ nmap <Leader>fn :FZF ~/notes<CR>
 " lazydocker and lazygit
 nnoremap <silent> <Leader>ld :call ToggleLazyDocker()<CR>
 nnoremap <silent> <Leader>lg :call ToggleLazyGit()<CR>
+"
+" Ranger
+let g:ranger_map_keys = 0
+nmap <Leader><Leader>r :RangerWorkingDirectory<CR>
+
+
+" Floaterm commands
+nmap <Leader><Leader>n :FloatermToggle <CR>
+" nmap <Leader><Leader>f :FloatermNew fzf<CR>
+" nmap <Leader><Leader>g :FloatermNew lazygit<CR>
+
+
