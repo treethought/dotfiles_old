@@ -23,5 +23,9 @@ joplin/resources
 !config.symlink/nvim/
 config.symlink/nvim/.netrwhist
 
+!config.symlink/i3/
+!config.symlink/i3status/
+
 # include kitty
 !config.symlink/kitty/
+config.symlink/kitty/kitty-themes/
