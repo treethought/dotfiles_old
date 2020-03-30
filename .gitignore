@@ -23,6 +23,7 @@ joplin/resources
 !config.symlink/nvim/
 config.symlink/nvim/.netrwhist
 
+
 # i3 and polbar
 !config.symlink/i3/
 !config.symlink/i3status/
@@ -33,6 +34,8 @@ config.symlink/nvim/.netrwhist
 !config.symlink/rofi/
 
 !config.symlink/spotifyd/
+
+!config.symlink/.Xresources
 
 # include kitty
 !config.symlink/kitty/
