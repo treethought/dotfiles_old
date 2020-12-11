@@ -334,7 +334,6 @@ let g:coc_global_extensions = [
       \'coc-stylelint',
       \'coc-yaml',
       \'coc-template',
-      \'coc-tabnine',
       \'coc-utils',
       \'coc-flutter'
       \]
@@ -396,7 +395,7 @@ endfunction
 
 " include .venv folders to detemrine workspaces
 " (useful for multiple python interpreters in a single workspace (project))
-autocmd FileType python let b:coc_root_patterns = ['.venv', '.vim', '.git']
+" autocmd FileType python let b:coc_root_patterns = ['.venv', '.vim', '.git']
 """"""""""
 "Markdown"
 """"""""""

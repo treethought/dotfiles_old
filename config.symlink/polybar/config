@@ -93,7 +93,7 @@ font-2 =  MesloLGSDZ Nerd Font Mono:style=Regular:pixelsize=10;1
 
 modules-left = bspwm i3
 modules-center = xwindow
-modules-right = filesystem xbacklight volume xkeyboard memory cpu network eth battery temperature date powermenu
+modules-right = mpd filesystem xbacklight volume xkeyboard memory cpu network eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2

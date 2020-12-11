@@ -24,6 +24,7 @@ let maplocalleader = " "
 
 " General
 nmap <Leader>w :w<CR>
+nmap <Leader>bs :w<CR>
 nmap <Leader>rr :source ~/.config/nvim/init.vim<CR>
 
 nmap <Leader>ss :mks!<CR>
@@ -105,6 +106,7 @@ nmap <Leader>n :NERDTreeToggle<CR>
 " FZF 
 nmap <Leader>p :Buffers<CR>
 nmap <Leader>f :Files<CR>
+nmap <Leader><Leader> :Files<CR>
 nmap <Leader>t :Tags<CR>
 nmap <Leader>g :Rg<CR>
 nmap <Leader>m :Marks<CR>

@@ -11,9 +11,9 @@ set notermguicolors
 
 " Colorscheme
 set background=dark
-colorscheme gruvbox
 " colorscheme wal
 
+colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'soft'
 
 
