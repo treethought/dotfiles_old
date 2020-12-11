@@ -1,0 +1,6 @@
+# key: lf
+# name: LogWithFields
+# --
+log.WithFields(log.Fields{
+    "$1": $2,
+}).$3("$0")
