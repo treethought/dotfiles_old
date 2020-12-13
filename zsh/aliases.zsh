@@ -1,4 +1,4 @@
-alias reload!='. ~/.zshrc'
+alias reload!='exec zsh'
 
 alias cls='clear' # Good 'ol Clear Screen command
 alias omz='e ~/.oh-my-zsh'

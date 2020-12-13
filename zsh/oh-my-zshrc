@@ -63,21 +63,14 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  zsh-nvm
-  git
-  python
-  docker-compose
-  # osx
+  # zsh-nvm
   zsh-autosuggestions
-  # zsh-syntax-highlighting
   z
-  fasd
-  kubectl
-  minikube
+  # fasd
+  # kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
-
 
 # User configuration
 
@@ -90,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
