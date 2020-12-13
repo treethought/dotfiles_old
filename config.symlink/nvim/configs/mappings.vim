@@ -101,6 +101,7 @@ nmap <Leader>gs :Magit<CR>
 
 " NERDTree
 nmap <Leader>n :NERDTreeToggle<CR>
+nmap <Leader>op :NERDTreeToggle<CR>
 
 
 " FZF 
@@ -109,6 +110,7 @@ nmap <Leader>f :Files<CR>
 nmap <Leader><Leader> :Files<CR>
 nmap <Leader>t :Tags<CR>
 nmap <Leader>g :Rg<CR>
+nmap <Leader>sp :Rg<CR>
 nmap <Leader>m :Marks<CR>
 nmap <Leader>fn :FZF ~/notes<CR>
 " nmap <Leader>gn :

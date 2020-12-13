@@ -30,7 +30,7 @@ set title
 set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
 
 " Longer leader key timeout
-" set timeout timeoutlen=1500
+set timeout timeoutlen=1500
 
 " Enable spell-checking for certain files
 autocmd FileType text,markdown setlocal spell
