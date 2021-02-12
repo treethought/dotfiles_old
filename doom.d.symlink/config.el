@@ -19,7 +19,12 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "monospace" :size 14))
+;; (setq doom-font (font-spec :family "menlo" :size 14))
+;; (setq doom-font (font-spec :family "Meslo LG M for Powerline" :size 14))
+(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 14))
+
+
+
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -157,21 +162,44 @@
             (setq +format-with eslint)
             ))
 
-(setq jiralib-url "https://dito.atlassian.net")
-;; luybFUVL3DkPEoZngU704177
-;;
 (setq flycheck-disabled-checkers '(yaml))
 
 ;; golang
-;; (setenv "GOPATH" "/home/cam/go")
+(setenv "GOPATH" "/Users/csweeney/go")
 
 ;; (setq lsp-ui-doc-enable t)
-;; (setq lsp-gopls-codelens nil)
+;; (setq lsp-go-codelenses nil)
 
 ;; (package! yasnippet-snippets)
 
 (setq +format-on-save-enabled-modes
       '(not yaml-mode  ; breaks helm templates
+            web-mode
+            markdown-mode
+            gfm-mode
             ))
 
 ;; (setq lsp-yaml-schemas '("kubernetes"))
+
+;; fix cursor in when running in terminal
+(unless (display-graphic-p)
+  (tool-bar-mode -1)
+  (evil-terminal-cursor-changer-activate) ; or (etcc-on)
+  )
+
+;; forge config
+                                        ;
+(setq auth-sources '("~/.authinfo.gpg"))
+;; (setq auth-source-debug trivia)
+(after! forge
+  (add-to-list 'forge-alist '("gitlab.edgecastcdn.net" "gitlab.edgecastcdn.net/api/v4/" "gitlab.edgeastcdn.net" forge-gitlab-repository)))
+
+;; (setq forge-alist '("gitlab.edgecastcdn.net" "gitlab.edgecastcdn.net/api/v4/" "gitlab.edgeastcdn.net" forge-gitlab-repository))
+
+(setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     "))
+
+
+
+
+(provide 'config)
+;;; config.el ends here

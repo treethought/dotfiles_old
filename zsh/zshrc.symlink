@@ -70,6 +70,13 @@ export ZSH='$ZSH is deprecated, use either $DOTFILES or $OHMYZSH instead.'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+#check compdump only once a day to speed things upo
+# https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+# compinit -C
 # autoload -Uz compinit
 # compinit
 # Completion for kitty
@@ -94,17 +101,31 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# TODO maybe remove
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
 # init fasd
 eval "$(fasd --init auto)"
 
 
+export EDITOR="emacsclient -nw -a ''"
 
 # source cargo
 # source /home/cam/.cargo/env
 
-# add GO to path
+export PATH=$PATH:~/.cargo/bin
+
+# add GO to path (for macos)
 export GOPATH=$HOME/go
-export PATH=$PATH:$HOME/go/bin
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# linkerd
+export PATH=$PATH:$HOME/.linkerd2/bin
 
 
+
+PROMPT='$(kube_ps1)'$PROMPT
+export PATH="/Users/csweeney/.deno/bin:$PATH"
 

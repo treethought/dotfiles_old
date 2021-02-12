@@ -27,7 +27,7 @@ alias -g T='|tail'
 alias -g G='|grep'
 alias -g V='|view -'
 
-alias em='emacsclient -t'
+alias em="emacsclient -nw -a ''"
 
 # joplin
 

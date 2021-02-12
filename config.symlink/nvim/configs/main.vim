@@ -13,8 +13,9 @@ set notermguicolors
 set background=dark
 " colorscheme wal
 
+" colorscheme default
 colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_contrast_dark = 'medium'
 
 
 augroup specify_filetype
@@ -32,7 +33,7 @@ set titlestring=%{substitute(getcwd(),\ $HOME,\ '~',\ '')}
 " Longer leader key timeout
 set timeout timeoutlen=1500
 
-" Enable spell-checking for certain files
+"Enable spell-checking for certain files
 autocmd FileType text,markdown setlocal spell
 
 " Limit line length for text files
@@ -40,7 +41,8 @@ autocmd FileType text,markdown,tex,vimwiki setlocal textwidth=80
 
 
 " Don't automatically collapse markdown
-set conceallevel=0
+" set conceallevel=0
+set conceallevel=3
 
 " Don't display mode in command line (airline already shows it)
 set noshowmode

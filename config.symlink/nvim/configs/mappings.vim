@@ -95,6 +95,14 @@ nnoremap  <Leader>cc  :<C-u>CocList commands<cr>
 " Find symbol of current document
 nnoremap <Leader>co  :<C-u>CocList outline<cr>
 
+" coc go
+
+
+" add imports on save
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd FileType go nmap gtj :CocCommand go.tags.add json<cr>
+autocmd FileType go nmap gty :CocCommand go.tags.add yaml<cr>
+autocmd FileType go nmap gtx :CocCommand go.tags.clear<cr>
 
 " Magit
 nmap <Leader>gs :Magit<CR>
@@ -107,7 +115,7 @@ nmap <Leader>op :NERDTreeToggle<CR>
 " FZF 
 nmap <Leader>p :Buffers<CR>
 nmap <Leader>f :Files<CR>
-nmap <Leader><Leader> :Files<CR>
+nmap <Leader><Leader>f :Files<CR>
 nmap <Leader>t :Tags<CR>
 nmap <Leader>g :Rg<CR>
 nmap <Leader>sp :Rg<CR>
@@ -126,6 +134,7 @@ nmap <Leader>vv :vs\|:terminal<CR>
 nmap <Leader>ot :e ~/notes/todo.txt<CR>
 
 nmap <Leader>fn :FZF ~/notes<CR>
+
 " lazydocker and lazygit
 nnoremap <silent> <Leader>ld :call ToggleLazyDocker()<CR>
 nnoremap <silent> <Leader>lg :call ToggleLazyGit()<CR>

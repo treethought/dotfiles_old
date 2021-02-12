@@ -2,14 +2,14 @@
 # SPACESHIP PROMPT
 
 SPACESHIP_PROMPT_ORDER=(
-  # vi_mode
+  vi_mode
   venv
   user
   host
   dir
   git
   kubectl
-  node
+  # node
   # docker
   line_sep
   char

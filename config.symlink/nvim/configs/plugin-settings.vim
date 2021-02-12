@@ -1,180 +1,34 @@
-"*****************************************************************************************
-"   ___    __                _               ____       __   __    _                   
-"  / _ \  / / __ __  ___ _  (_)  ___        / __/ ___  / /_ / /_  (_)  ___   ___ _  ___
-" / ___/ / / / // / / _ `/ / /  / _ \      _\ \  / -_)/ __// __/ / /  / _ \ / _ `/ (_-<
-"/_/    /_/  \_,_/  \_, / /_/  /_//_/     /___/  \__/ \__/ \__/ /_/  /_//_/ \_, / /___/
-"                  /___/                                                   /___/       
-"
-"*****************************************************************************************
 
-"""""""""""""""
-" Git Gutter  "
-"""""""""""""""
-let g:gitgutter_enabled = 1
-let g:gitgutter_grep=''
-
-
-"""""""""""""""
-" FZF "
-"""""""""""""""
-let g:rg_command = '
-  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
-  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
-  \ -g "!*.{min.js,swp,o,zip}" 
-  \ -g "!{.git,node_modules,vendor,.venv}/*" '
-
-
-" Reverse the layout to make the FZF list top-down
-" let $FZF_DEFAULT_OPTS='--layout=reverse'
-
-" " Using the custom window creation function
-" let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-
-" " Function to create the custom floating window
-" function! FloatingFZF()
-"   " creates a scratch, unlisted, new, empty, unnamed buffer
-"   " to be used in the floating window
-"   let buf = nvim_create_buf(v:false, v:true)
-
-"   " 90% of the height
-"   let height = float2nr(&lines * 0.5)
-"   " 60% of the height
-"   let width = float2nr(&columns * 0.4)
-"   " horizontal position (centralized)
-"   let horizontal = float2nr((&columns - width) / 3)
-"   " vertical position (one line down of the top)
-"   let vertical = 20
-
-"   let opts = {
-"         \ 'relative': 'editor',
-"         \ 'row': vertical,
-"         \ 'col': horizontal,
-"         \ 'width': width,
-"         \ 'height': height
-"         \ }
-
-"   " open the new window, floating, and enter to it
-"   call nvim_open_win(buf, v:true, opts)
-" endfunction
-
-"""""""""""
-" Goyo    "
-"""""""""""
-" nmap <F6> :Goyo<CR>
-"
-
-
-" Vim Wiki
-
-" Dont set vimwiki filetype globally
-let g:vimwiki_global_ext = 0
-
-let g:vimwiki_list = [{'path': '~/notes/',
-                       \ 'syntax': 'markdown', 'ext': '.md'}, {'path': '~/joplin_export/',
-                       \ 'syntax': 'markdown', 'ext': '.md'}]
-" Taskwiki
-let g:taskwiki_syntax = 'markdown'
-
-
-"""""""""""
-" Vista  "
-"""""""""""
-nmap <F8> :Vista!!<CR>
-let g:vista_executive_for = {
-      \ 'c': 'coc',
-      \ }
-nnoremap <silent><leader>vf :Vista finder coc<CR>
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista#renderer#enable_icon = 1
-let g:vista_sidebar_width = 50
-
-""""""""""""
-"NerdTree  "
-""""""""""""
-" if nerdtree is only window, kill nerdtree so buffer can die
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | :bdelete | endif
-map <M-0> :NERDTreeToggle<CR>
-let nerdtreequitonopen = 0
-let NERDTreeShowHidden=1
-let nerdchristmastree=1
-let g:NERDTreeMinimalUI = 1
-let g:nerdtreewinsize = 25
-let g:NERDTreeDirArrowExpandable = '▷'
-let g:NERDTreeDirArrowCollapsible = '▼'
-let NERDTreeAutoCenter=1
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-        \ "modified"  : "✹",
-        \ "staged"    : "✚",
-        \ "untracked" : "✭",
-        \ "renamed"   : "➜",
-        \ "unmerged"  : "═",
-        \ "deleted"   : "✖",
-        \ "dirty"     : "✗",
-        \ "clean"     : "✔︎",
-        \ 'ignored'   : '☒',
-        \ "unknown"   : "?"
-        \ }
-
-
-""""""""""""
-"Airline   "
-""""""""""""
-"main settings
-let g:airline_theme='gruvbox'
-let g:airline_powerline_fonts = 0
-" let g:airline_symbols = {}
-" let g:airline_skip_empty_sections = 1
-" let g:airline_left_sep = ''
-" let g:airline_left_alt_sep = ''
-" let g:airline_right_sep = ''
-" let g:airline_right_alt_sep = ''
-" let g:airline_symbols_branch = ''
-" let g:airline_powerline_fonts = 1
-" let g:airline_symbols.crypt = ''
-" let g:airline_symbols.linenr = '☰'
-" let g:airline_symbols.linenr = '␊'
-" let g:airline_symbols.linenr = '␤'
-" let g:airline_symbols.linenr = '¶'
-" let g:airline_symbols.maxlinenr = ''
-" let g:airline_symbols.paste = 'ρ'
-" let g:airline_symbols.paste = 'Þ'
-" let g:airline_symbols.paste = '∥'
-" let g:airline_symbols.spell = 'Ꞩ'
-" let g:airline_symbols.notexists = 'Ɇ'
-" let g:airline_symbols.whitespace = 'Ξ'
-" let g:airline_symbols.modified = ' '
-" let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
-" let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
-"extensions
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#ale#enabled = 1
-" let g:airline#extensions#coc#enabled = 1
-" let g:airline#extensions#unicode#enabled = 1
-" let g:airline#extensions#branch#enabled = 1
-" let g:airline#extensions#vista#enabled = 1
-" let g:airline#extensions#hunks#enabled = 1
-"extension settings
-" let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
-" let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
-" let airline#extensions#coc#warning_symbol = ':'
-" let airline#extensions#coc#error_symbol = ':'
-" let g:airline#extensions#hunks#hunk_symbols = [':', ':', ':']
-" let g:airline#extensions#branch#format = 2
-
-
-"""""""""""""
-"Devicons   "
-"""""""""""""
-let g:webdevicons_enable = 1
-" let g:webdevicons_enable_unite = 1
-" let g:webdevicons_enable_denite = 1
-let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
 " let g:webdevicons_enable_vimfiler = 1
 let g:WebDevIconsUnicodeDecorateFileNodes = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 " let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:webdevicons_enable_airline_statusline = 1
+" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+" let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+" let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+" let g:DevIconsDefaultFolderOpenSymbol = ''
+"
+" after a re-source, fix syntax matching issues (concealing brackets):
+if exists('g:loaded_webdevicons')
+  call webdevicons#refresh()
+endif
+
+"""""""""""""
+"Devicons   "
+"""""""""""""
+" let g:webdevicons_enable = 1
+" let g:webdevicons_enable_unite = 1
+" let g:webdevicons_enable_denite = 1
+" let g:webdevicons_enable_nerdtree = 1
+" let g:webdevicons_enable_airline_tabline = 1
+" let g:webdevicons_enable_vimfiler = 1
+" let g:WebDevIconsUnicodeDecorateFileNodes = 1
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+" let g:webdevicons_enable_airline_statusline = 1
 " let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 " let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 " let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
@@ -319,7 +173,6 @@ let g:coc_global_extensions = [
       \'coc-sh', 
       \'coc-snippets',
       \'coc-prettier',
-      \'coc-eslint',
       \'coc-emmet',
       \'coc-tsserver',
       \'coc-docker',
@@ -334,9 +187,10 @@ let g:coc_global_extensions = [
       \'coc-stylelint',
       \'coc-yaml',
       \'coc-template',
-      \'coc-flutter'
       \]
 
+      " \'coc-eslint',
+      " \'coc-flutter'
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
