@@ -102,13 +102,15 @@ done
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # TODO maybe remove
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 
 # init fasd
 eval "$(fasd --init auto)"
 
 
-export EDITOR="emacsclient -nw -a ''"
+# export EDITOR="emacsclient -nw -a ''"
+# export EDITOR="emacs-nw"
+export EDITOR="nvim"
 
 # source cargo
 # source /home/cam/.cargo/env

@@ -80,8 +80,7 @@
     }
   },
   "yaml.schemas": {
-      "kubernetes": "/*.yaml",
+      "kubernetes": "/*.yaml"
   },
   "yaml.validate": true
 }
-

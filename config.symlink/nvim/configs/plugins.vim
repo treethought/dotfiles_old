@@ -143,6 +143,11 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'voldikss/vim-floaterm'
 
 Plug 'hashivim/vim-terraform'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" typescrtip
+" Plugin 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
 
 
 call plug#end()

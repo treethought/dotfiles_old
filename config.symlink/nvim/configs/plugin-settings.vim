@@ -1,4 +1,12 @@
+"""""""""""""""
+" Git Gutter  "
+"""""""""""""""
+let g:gitgutter_enabled = 1
+let g:gitgutter_grep=''
 
+"""""""""""""
+"Devicons   "
+"""""""""""""
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_conceal_nerdtree_brackets = 1
 " let g:webdevicons_enable_vimfiler = 1
@@ -16,9 +24,6 @@ if exists('g:loaded_webdevicons')
   call webdevicons#refresh()
 endif
 
-"""""""""""""
-"Devicons   "
-"""""""""""""
 " let g:webdevicons_enable = 1
 " let g:webdevicons_enable_unite = 1
 " let g:webdevicons_enable_denite = 1
@@ -186,7 +191,6 @@ let g:coc_global_extensions = [
       \'coc-lists',
       \'coc-stylelint',
       \'coc-yaml',
-      \'coc-template',
       \]
 
       " \'coc-eslint',
@@ -223,6 +227,33 @@ xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
+" coc-snippets
+" Use <C-l> for trigger snippet expand.
+" imap <C-l> <Plug>(coc-snippets-expand)
+
+" " Use <C-j> for select text for visual placeholder of snippet.
+" vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+" let g:coc_snippet_next = '<c-j>'
+
+" " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+" let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
+
+" Make <tab> used for trigger completion, completion confirm, snippet expand and jump
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+
 " augroup MyAutoCmd
 "   autocmd!
 "   " Setup formatexpr specified filetype(s).
@@ -245,6 +276,9 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+
+
 
 " include .venv folders to detemrine workspaces
 " (useful for multiple python interpreters in a single workspace (project))
@@ -306,3 +340,22 @@ set conceallevel=1
 " let g:auto_save_silent = 1
 " let g:auto_save_events = ["InsertLeave", "TextChanged", "FocusLost"]
 
+
+" " Centered floating window for fzf
+" let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
+"
+" go syntax highlighting - may slow down vim
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+
+" use coc for documentation with K
+" if choose to use vim-go, the popup is better
+" let g:go_doc_keywordprg_enabled = 0
+" let g:go_doc_popup_window = 1
+"
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/notes/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]

@@ -1,5 +1,4 @@
 alias reload!='exec zsh'
-
 alias cls='clear' # Good 'ol Clear Screen command
 alias omz='e ~/.oh-my-zsh'
 alias dotfiles='e $DOTFILES'
@@ -27,7 +26,8 @@ alias -g T='|tail'
 alias -g G='|grep'
 alias -g V='|view -'
 
-alias em="emacsclient -nw -a ''"
+# alias em="emacsclient -nw -a ''"
+alias em="emacs -nw"
 
 # joplin
 
@@ -55,12 +55,24 @@ function lh() {
 	fi
 }
 
+
+
+function magit() {
+    # echo $(emacsclient -c -nw -a "emacs -nw" -e "(magit-status \"$(git rev-parse --show-toplevel)\")")
+    # emacsclient -c -nw -e"(magit-staus)" -a "emacs -nw --eval \"(magit-status)\"" 
+    
+    # emacs -nw --eval "(magit-status)"
+    emacsclient -nw --eval "(magit-status)" -a ""
+
+}
+
 alias music="ncmpcpp"
 
 alias gps="ps aux | grep -v grep | grep"
 
 # standalone magit script
-alias magit="emacs -q --load ~/.magit/init.el"
+# alias magit="emacs -q --load ~/.magit/init.el"
+# alias magit='emacsclient -n -e \(magit-status\)'
 
 alias hdi="howdoi"
 
@@ -77,3 +89,11 @@ alias gg="lazygit"
 alias r="ranger"
 
 alias tt="todoist"
+
+alias bundler="/usr/local/bin/bundler"
+
+# alias tidy to tidy-html5 for formatting fix
+alias tidy=/usr/local/bin/tidy
+
+# tmuxinator switch project
+alias pp=tmuxinator-fzf-start.sh

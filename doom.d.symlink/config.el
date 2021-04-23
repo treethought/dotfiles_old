@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, eonil
 ;; clients, file templates and snippets.
 (setq user-full-name "Cam Sweeney"
-      user-mail-address "cameron.sweeney@ditoweb.com")
+      user-mail-address "cameron.sweeney@verizonmedia.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -29,12 +29,46 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
+;; (when (display-graphic-p)
+;;
+;; https://github.com/hlissner/emacs-doom-themes/pull/579
+(use-package doom-themes
+  :custom-face
+  ;; colors taken grom doom-gruvbox-theme.el
+  (rainbow-delimiters-depth-1-face ((t (:foreground "#fb4934")))) ;; red
+  (rainbow-delimiters-depth-2-face ((t (:foreground "#fabd2f")))) ;; yellow
+  (rainbow-delimiters-depth-3-face ((t (:foreground "#8ec07c")))) ;; cyan
+  :config
+  (setq rainbow-delimiters-max-face-count 3))
+
 (setq doom-theme 'doom-gruvbox)
+
 (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
 (doom-themes-treemacs-config)
-
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
+
+;; (after! cycle-themes
+;;   (setq cycle-themes-theme-list
+;;         '(doom-city-lights
+;;           doom-gruvbox
+;;           doom-nova
+;;           doom-nord
+;;           doom-oceanic-next
+;;           doom-opera
+;;           doom-palenight
+;;           doom-peacock
+;;           doom-sourcerer
+;;           doom-spacegrey
+;;           doom-wilmersdorf
+;; 	  doom-solariized-dark
+;; 	  doom-zenburn
+;;           ))
+;;   )
+;; (require 'cycle-themes)
+;; (cycle-themes-mode)
+
+;; )
 ;; (use-package ewal
 ;;     :init (setq ewal-use-built-in-always-p nil
 ;;             ewal-use-built-in-on-failure-p t))
@@ -43,6 +77,9 @@
 ;; :config (progn
 ;;           (load-theme 'ewal-doom-one t)
 ;;                       (enable-theme 'ewal-doom-one)))
+;;
+;;
+                                        ;
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -95,7 +132,7 @@
 
 (setq todoist-token "a9f42914a5542a8985257ad1c76dcc69d15cec4d")
 
-(setq org-directory "~/Dropbox/org")
+(setq org-directory "~/org")
 (use-package org-super-agenda
   :after org-agenda
   :init
@@ -177,6 +214,7 @@
             web-mode
             markdown-mode
             gfm-mode
+            ;; terraform-mode
             ))
 
 ;; (setq lsp-yaml-schemas '("kubernetes"))
@@ -198,6 +236,10 @@
 
 (setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     "))
 
+;; (set-lookup-handlers! 'go-mode
+;;   ;; :definition #'
+;;   ;; :references #'anaconda-mode-find-references
+;;   :documentation #'godoc-at-point)
 
 
 
