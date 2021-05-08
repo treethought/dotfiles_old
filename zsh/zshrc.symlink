@@ -139,5 +139,7 @@ export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 
 
 # PROMPT='$(kube_ps1)'$PROMPT
+# PROMPT='$(PROMPTedge)@$EDGE_DEV_MODE'
 export PATH="$PATH:/home/csweeney/.deno/bin"
 
+export TODOIST_API_KEY="$(pass Todoist/API)"

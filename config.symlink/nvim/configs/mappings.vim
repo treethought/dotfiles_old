@@ -25,12 +25,19 @@ let maplocalleader = " "
 " General
 " nmap <Leader>w :w<CR>
 nmap <Leader>bs :w<CR>
-nmap <Leader>rr :source ~/.config/nvim/init.vim<CR>
+nmap <Leader><Leader>r :source ~/.config/nvim/init.vim<CR>
 
 " nmap <Leader>ss :mks!<CR>
 
 " open fork for current repo
 nmap <Leader>of :!fork open .<CR>
+
+" open todoist
+nmap <Leader><Leader>t :Todoist<CR>
+
+
+" write file with sudo
+" command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 
 " Window Navigation
@@ -179,7 +186,7 @@ nnoremap <silent> <Leader>ld :call ToggleLazyDocker()<CR>
 "
 " Ranger
 let g:ranger_map_keys = 0
-nmap <Leader><Leader>r :Ranger<CR>
+nmap <Leader>rr :Ranger<CR>
 
 " swich project via tmuxinator
 nnoremap <silent> <Leader>pp :call ToggleProject()<CR>

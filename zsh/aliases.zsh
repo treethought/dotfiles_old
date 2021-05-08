@@ -35,6 +35,8 @@ alias jj='joplin'
 alias ju='joplin use'
 alias jl='joplin ls -l'
 
+alias tt='/home/linuxbrew/.linuxbrew/bin/todoist'
+
 function jn() {
 	if [ $# -eq 0 ]; then
 		joplin mknote "$1"
@@ -88,7 +90,6 @@ alias vp="d -e nvim"
 alias gg="lazygit"
 alias r="ranger"
 
-alias tt="todoist"
 
 alias bundler="/usr/local/bin/bundler"
 

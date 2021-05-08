@@ -68,5 +68,6 @@
 (package! bazel-mode)
 (package! evil-terminal-cursor-changer)
 (package! gruvbox-theme)
+(package! emacsql-sqlite)
 ;; (package! cycle-themes)
 ;; (package! deno)

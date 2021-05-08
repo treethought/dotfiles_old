@@ -7,6 +7,7 @@ bind-key Space send-prefix
 set -gw mode-keys vi
 
 # better vim like copying/yanking
+bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
 bind-key -T copy-mode-vi 'v' send -X begin-selection
 bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 

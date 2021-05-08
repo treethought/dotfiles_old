@@ -111,6 +111,10 @@ Plug 'tbabej/taskwiki'
 " todo.txt
 Plug 'freitass/todo.txt-vim'
 
+" todoist
+Plug 'romgrk/todoist.nvim', { 'do': ':TodoistInstall' }
+
+
 "Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
@@ -149,5 +153,6 @@ Plug 'hashivim/vim-terraform'
 " Plugin 'HerringtonDarkholme/yats.vim'
 Plug 'leafgarland/typescript-vim'
 
+Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
 
 call plug#end()

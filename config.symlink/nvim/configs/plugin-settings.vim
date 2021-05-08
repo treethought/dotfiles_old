@@ -359,3 +359,13 @@ let g:go_highlight_function_calls = 1
 " vimwiki
 let g:vimwiki_list = [{'path': '~/notes/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" todoist
+let todoist = {
+\ 'icons': {
+\   'unchecked': '  ',
+\   'checked':   '  ',
+\   'loading':   '  ',
+\   'error':     '  ',
+\ },
+\}
