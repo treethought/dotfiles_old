@@ -155,4 +155,20 @@ Plug 'leafgarland/typescript-vim'
 
 Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
 
+" ale and vim-buf for proto linting
+Plug 'dense-analysis/ale'
+Plug 'bufbuild/vim-buf'
+let g:ale_linters = {
+\   'proto': ['buf-lint',],
+\}
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_linters_explicit = 1
+
+
+" generate go tests
+Plug 'buoto/gotests-vim'
+
+Plug 'sainnhe/everforest'
+Plug 'ulwlu/elly.vim'
+
 call plug#end()

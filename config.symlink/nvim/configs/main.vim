@@ -7,15 +7,15 @@
 "
 "***********************************************************************************
 
-set notermguicolors
+" set notermguicolors
+set termguicolors
 
 " Colorscheme
 set background=dark
-" colorscheme wal
+colorscheme everforest
 
-" colorscheme default
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'medium'
+" colorscheme gruvbox
+" let g:gruvbox_contrast_dark = 'medium'
 
 
 augroup specify_filetype

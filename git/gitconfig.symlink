@@ -39,7 +39,7 @@
 	user = treethought
 [user]
 	name = Cam Sweeney
-	email = cameron.sweeney@ditoweb.com
+	email = cpsweene@gmail.com
 [mergetool "gitblade"]
 	cmd = \"/usr/lib/gitblade/gitblade\" -c \"\"
 	trustExitCode = true
