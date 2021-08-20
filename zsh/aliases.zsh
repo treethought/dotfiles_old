@@ -79,7 +79,6 @@ alias gps="ps aux | grep -v grep | grep"
 alias hdi="howdoi"
 
 # fasd aliases
-alias v="nvim"
 alias vf="f -e nvim"
 alias vr="f -t -e vim -b viminfo"
 alias vp="d -e nvim"
