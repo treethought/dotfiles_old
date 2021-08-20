@@ -92,13 +92,13 @@ nmap <Leader>bf :call CocAction('format')<CR>
 
 " Using CocList
 " Show all diagnostics
-nnoremap  <Leader>cdi  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap  <Leader>ce  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap  <Leader>cc  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <Leader>co  :<C-u>CocList outline<cr>
+" nnoremap  <Leader>cdi  :<C-u>CocList diagnostics<cr>
+" " Manage extensions
+" nnoremap  <Leader>ce  :<C-u>CocList extensions<cr>
+" " Show commands
+" nnoremap  <Leader>cc  :<C-u>CocList commands<cr>
+" " Find symbol of current document
+" nnoremap <Leader>co  :<C-u>CocList outline<cr>
 
 
 " coc diagnostics
@@ -141,6 +141,19 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fg <cmd>Telescope git_commits<cr>
 nnoremap <leader>gb <cmd>Telescope git_bcommits<cr>
 
+" Using CocList with telescope-coc
+
+" Show all diagnostics
+nnoremap <leader>cdi <cmd>Telescope coc diagnostics<cr>
+nnoremap <leader>cdp <cmd>Telescope coc workspace_diagnostcs<cr>
+" Manage extensions
+nnoremap  <Leader>ce <cmd>Telescope coc extensions<cr>
+" Show commands
+nnoremap  <Leader>cc <cmd>Telescope coc commands<cr>
+" Find symbol of current document
+nnoremap <Leader>cod <cmd>Telescope coc document_symbols<cr>
+" Find symbol of current workspace
+nnoremap <Leader>cop <cmd>Telescope coc workspace_symbols<cr>
 
 
 " special git stuff
