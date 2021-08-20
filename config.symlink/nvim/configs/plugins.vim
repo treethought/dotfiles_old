@@ -19,12 +19,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Git wrapper
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-" Plug 'tpope/vim-rhubarb'
 
 Plug 'rhysd/git-messenger.vim'
 
-"Magit
-Plug 'jreybert/vimagit'
+Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
 
 " FZF
 set rtp+=~/.vim/bundle/fzf
@@ -32,11 +30,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 
-" Code Snippets Engine
-" Plug 'SirVer/ultisnips'
 
-" Snippets for ultisnips
-" Plug 'honza/vim-snippets'
 
 " Vim Surround
 Plug 'tpope/vim-surround'
@@ -47,15 +41,8 @@ Plug 'tpope/vim-commentary'
 "Vim Motion
 Plug 'easymotion/vim-easymotion'
 
-" Auto pairs
-" Plug 'jiangmiao/auto-pairs'
-
 "Rainbow Brackets
 Plug 'luochen1990/rainbow'
-
-
-" Multiple Cursors
-" Plug 'terryma/vim-multiple-cursors'
 
 "" Indent guides
  Plug 'Yggdroot/indentLine'
@@ -63,41 +50,19 @@ Plug 'luochen1990/rainbow'
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Smart completion (to work with CoC)
-" Plug 'zxqfl/tabnine-vim'
-
-" Custom start page
- Plug 'mhinz/vim-startify'
-
-" Vim Javascript
-Plug 'pangloss/vim-javascript'
-
-" Language Packs
-Plug 'sheerun/vim-polyglot'
+"Colorschemes
+Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
+Plug 'sainnhe/everforest'
+Plug 'ulwlu/elly.vim'
+Plug 'lifepillar/vim-solarized8'
 
 " Status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Tabular auto-align
-" Plug 'godlygeek/tabular'
-
-" Comfy scroll
-" Plug 'yuttie/comfortable-motion.vim'
-
 " Add DevIcons
 Plug 'ryanoasis/vim-devicons'
-
-" Tagbar
-Plug 'liuchengxu/vista.vim'
-
-" NERDTree
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-" Emoji support
-" Plug 'junegunn/vim-emoji'
 
 " goyo distraction free mode
 Plug 'junegunn/goyo.vim'
@@ -114,14 +79,6 @@ Plug 'freitass/todo.txt-vim'
 " todoist
 Plug 'romgrk/todoist.nvim', { 'do': ':TodoistInstall' }
 
-
-"Colorschemes
-Plug 'flazz/vim-colorschemes'
-Plug 'morhetz/gruvbox'
-
-" Wal theme
-Plug 'dylanaraps/wal.vim'
-Plug 'deviantfero/wpgtk.vim'
 
 
 "Markdown
@@ -141,19 +98,30 @@ Plug 'chrisbra/Colorizer'
 " Ranger integration
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
-" Autosaving
-" Plug '907th/vim-auto-save'
 
 Plug 'voldikss/vim-floaterm'
 
-Plug 'hashivim/vim-terraform'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-" typescrtip
-" Plugin 'HerringtonDarkholme/yats.vim'
+
+
+" Languages
+
+" Vim Javascript
+Plug 'pangloss/vim-javascript'
+
+" Language Packs
+Plug 'sheerun/vim-polyglot'
+
+" vlang
+Plug 'ollykel/v-vim'
+
+Plug 'hashivim/vim-terraform'
+
+" typescript
 Plug 'leafgarland/typescript-vim'
 
-Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
+" generate go tests
+Plug 'buoto/gotests-vim'
 
 " ale and vim-buf for proto linting
 Plug 'dense-analysis/ale'
@@ -164,11 +132,5 @@ let g:ale_linters = {
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters_explicit = 1
 
-
-" generate go tests
-Plug 'buoto/gotests-vim'
-
-Plug 'sainnhe/everforest'
-Plug 'ulwlu/elly.vim'
 
 call plug#end()
