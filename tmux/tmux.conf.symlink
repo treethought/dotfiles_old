@@ -80,6 +80,9 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 # vimium like hints for copy
 # set -g @plugin 'fcsonline/tmux-thumbs'
 
+# elly theme
+set -g @plugin 'ulwlu/elly-tmux'
+
 
 # # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
