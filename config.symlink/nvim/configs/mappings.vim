@@ -117,12 +117,11 @@ autocmd FileType go nmap gtx :CocCommand go.tags.clear<cr>
 
 
 " FZF 
-nmap <Leader>p :Buffers<CR>
-nmap <Leader>ff :Files<CR>
-nmap <Leader>t :Tags<CR>
-nmap <Leader>sp :Rg<CR>
-nmap <Leader>m :Marks<CR>
-nmap <Leader>fn :FZF ~/notes<CR>
+" nmap <Leader>p :Buffers<CR>
+" nmap <Leader>ff :Files<CR>
+" nmap <Leader>sp :Rg<CR>
+" nmap <Leader>m :Marks<CR>
+" nmap <Leader>fn :FZF ~/notes<CR>
 
 " fix spelling error to top suggestion
 nmap <Leader>z mz[s1z=e'z
@@ -133,6 +132,14 @@ nmap <Leader>vv :vs\|:terminal<CR>
 " open todo.txt file
 nmap <Leader>ot :e ~/notes/todo.txt<CR>
 
+
+" TELESCOPE
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>sp <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fg <cmd>Telescope git_commits<cr>
+nnoremap <leader>gb <cmd>Telescope git_bcommits<cr>
 
 
 

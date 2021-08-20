@@ -30,7 +30,12 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 
+" telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 " Vim Surround
 Plug 'tpope/vim-surround'
@@ -46,6 +51,10 @@ Plug 'luochen1990/rainbow'
 
 "" Indent guides
  Plug 'Yggdroot/indentLine'
+
+
+" start page
+Plug 'mhinz/vim-startify'
 
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
