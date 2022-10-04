@@ -12,10 +12,15 @@ set termguicolors
 
 " Colorscheme
 set background=dark
-colorscheme everforest
+
+
+" colorscheme everforest
+" colorscheme solarized8_dark_high
+colorscheme elly
+" colorscheme gruvbox
 
 " colorscheme gruvbox
-" let g:gruvbox_contrast_dark = 'medium'
+" let g:gruvbox_contrast_light = "medium"
 
 
 augroup specify_filetype
@@ -23,6 +28,9 @@ augroup specify_filetype
     autocmd BufRead,BufNewFile *.md set filetype=markdown
     autocmd BufRead,BufNewFile *.txt set filetype=text
     autocmd BufRead,BufNewFile *.Tiltfile set filetype=python
+    autocmd BufRead,BufNewFile *.tsx set filetype=typescript.tsx
+    autocmd BufRead,BufNewFile *.jsx set filetype=typescript.jsx
+
 augroup END
 
 " set title for terminal tab
@@ -38,7 +46,10 @@ set timeout timeoutlen=1000
 autocmd FileType text,markdown setlocal spell
 
 " Limit line length for text files
-autocmd FileType text,markdown,tex,vimwiki setlocal textwidth=80
+" autocmd FileType text,markdown,tex,vimwiki setlocal textwidth=80
+autocmd FileType text,markdown,tex setlocal textwidth=80 wrap
+
+autocmd FileType yaml,helm setlocal ts=2 sts=2 sw=2 expandtab
 
 
 " Don't automatically collapse markdown

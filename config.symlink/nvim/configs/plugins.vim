@@ -35,6 +35,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 
+Plug 'dhruvmanila/telescope-bookmarks.nvim'
+
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
@@ -78,7 +80,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/goyo.vim'
 
 " vim wiki for notes
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 
 " integrate vimwiki with taskwarrior
 Plug 'tbabej/taskwiki'
@@ -113,6 +115,9 @@ Plug 'voldikss/vim-floaterm'
 
 
 
+" tidalcycles
+Plug 'tidalcycles/vim-tidal'
+let g:tidal_target = "terminal"
 
 " Languages
 
@@ -124,6 +129,7 @@ Plug 'sheerun/vim-polyglot'
 
 " vlang
 Plug 'ollykel/v-vim'
+Plug 'zakuro9715/vim-vtools'
 
 Plug 'hashivim/vim-terraform'
 
@@ -142,5 +148,7 @@ let g:ale_linters = {
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters_explicit = 1
 
+" for websockets, needed by vim-hydra-eval
+Plug 'dhleong/vim-wildwildws', {'do': 'npm i -g wildwildws-d'}
 
 call plug#end()

@@ -145,6 +145,8 @@ let g:coc_global_extensions = [
       \'coc-lists',
       \'coc-stylelint',
       \'coc-yaml',
+      \'coc-deno',
+      \'coc-tslint-plugin',
       \]
 
       " \'coc-eslint',
@@ -311,8 +313,20 @@ let g:go_highlight_function_calls = 1
 "
 
 " vimwiki
-let g:vimwiki_list = [{'path': '~/vault/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+" let g:vimwiki_list = [{'path': '~/vault/',
+"                       \ 'syntax': 'markdown', 'ext': '.md'}]
+" let g:vimwiki_list = [{
+"   \ 'auto_export': 1,
+"   \ 'automatic_nested_syntaxes':1,
+"   " \ 'path_html': '$HOME/valut/wiki_html',
+"   \ 'path': '$HOME/vault',
+"   \ 'template_path': '$HOME/Sync/wiki/template/',
+"   \ 'syntax': 'markdown',
+"   \ 'ext':'.md',
+"   \ 'template_default':'markdown',
+"   \ 'custom_wiki2html': '$HOME/valut/wiki2html.sh',
+"   \ 'template_ext':'.html'
+" \}]
 
 " todoist
 let todoist = {
@@ -324,6 +338,45 @@ let todoist = {
 \ },
 \}
 
+
+
+" hoon
+" let g:UltiSnipsExpandTrigger="<TAB>"
+" let g:UltiSnipsJumpForwardTrigger="<TAB>"
+" let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+" let g:asyncomplete_auto_completeopt = 0
+" set completeopt=menuone,noinsert
+
+" if executable('hoon-language-server')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'hoon-language-server',
+"         \ 'cmd': ['hoon-language-server'],
+"         \ 'whitelist': ['hoon'],
+"         \ })
+" endif
+
+" sonic-pi
+let g:sonic_pi_command = 'sonic_pi'
+let g:sonic_pi_check = 'version'
+let g:sonic_pi_eval = ''
+let g:sonic_pi_stop = 'stop'
+" Disabled due to lack of support
+let g:sonic_pi_run = ''
+let g:sonic_pi_logs = ''
+let g:sonic_pi_record = ''
+
+" tidalcycles
+autocmd FileType tidal call s:tidal_abbr()
+autocmd FileType tidal setlocal commentstring=--\ %s
+function! s:tidal_abbr()
+    inoreabbr billybd "[t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~]"
+    inoreabbr billysn "[~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~]"
+    inoreabbr billych "[t ~ t ~] [t ~ t ~] [t ~ t ~] [t ~ t ~]"
+    inoreabbr bluemondaybd "[t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~]"
+    inoreabbr bluemondaysn "[~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~]"
+    inoreabbr bluemondaycp "[~ ~ ~ ~] [t ~ ~ ~] [~ ~ ~ ~] [t ~ ~ ~]"
+    inoreabbr bluemondayoh "[~ ~ t ~] [~ ~ t ~] [~ ~ t ~] [~ ~ t ~]"
+endfunction
 
 
 " telescope
@@ -375,4 +428,6 @@ require('telescope').setup{
   },
 }
 require('telescope').load_extension('coc')
+
+
 EOF

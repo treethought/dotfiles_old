@@ -15,7 +15,7 @@
   "list.source.files.defaultOptions": ["--auto-preview"],
   "list.source.outline.defaultOptions": ["--auto-preview"],
   //prettier
-  "coc.preferences.formatOnSaveFiletypes": ["css","markdown", "go"],
+  "coc.preferences.formatOnSaveFiletypes": ["","markdown", "go"],
   "prettier.statusItemText": "★ ",
   "prettier.eslintIntegration": true,
   "prettier.tslintIntegration": true,
@@ -77,6 +77,10 @@
       "command": "terraform-lsp",
       "filetypes": ["terraform"],
       "initializationOptions": {}
+    },
+    "vlang": {
+        "command": "/home/csweeney/tools/vls/bin/vls",
+        "filetypes": ["vlang"]
     }
   },
   "yaml.schemas": {

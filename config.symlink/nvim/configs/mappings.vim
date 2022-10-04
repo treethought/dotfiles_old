@@ -118,8 +118,8 @@ autocmd FileType go nmap gtx :CocCommand go.tags.clear<cr>
 
 " FZF 
 " nmap <Leader>p :Buffers<CR>
-" nmap <Leader>ff :Files<CR>
-" nmap <Leader>sp :Rg<CR>
+nmap <Leader>ff :Files<CR>
+nmap <Leader>sp :Rg<CR>
 " nmap <Leader>m :Marks<CR>
 " nmap <Leader>fn :FZF ~/notes<CR>
 
@@ -134,8 +134,8 @@ nmap <Leader>ot :e ~/notes/todo.txt<CR>
 
 
 " TELESCOPE
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>sp <cmd>Telescope live_grep<cr>
+" nnoremap <leader>ff <cmd>Telescope find_files<cr>
+" nnoremap <leader>sp <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fg <cmd>Telescope git_commits<cr>
@@ -186,3 +186,9 @@ nmap <Leader><Leader>n :FloatermToggle <CR>
 
 " easymotion commands
 map <Leader><Leader>s <Plug>(easymotion-prefix)
+
+
+" hydra
+map <Leader>he <Plug>HydraEvalSend
+map <Leader>hs <Plug>HydraEvalSendAll
+" autocmd FileType hydra.javascript xmap <buffer> <localleader>s  <Plug>HydraEvalRegionSend
