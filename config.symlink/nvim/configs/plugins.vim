@@ -66,7 +66,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/everforest'
-Plug 'ulwlu/elly.vim'
+Plug 'treethought/elly.vim'
 Plug 'lifepillar/vim-solarized8'
 
 " Status bar
@@ -119,6 +119,8 @@ Plug 'voldikss/vim-floaterm'
 Plug 'tidalcycles/vim-tidal'
 let g:tidal_target = "terminal"
 
+Plug 'supercollider/scvim'
+
 " Languages
 
 " Vim Javascript
@@ -150,5 +152,7 @@ let g:ale_linters_explicit = 1
 
 " for websockets, needed by vim-hydra-eval
 Plug 'dhleong/vim-wildwildws', {'do': 'npm i -g wildwildws-d'}
+
+Plug 'github/copilot.vim'
 
 call plug#end()
