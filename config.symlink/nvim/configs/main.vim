@@ -14,9 +14,9 @@ set termguicolors
 set background=dark
 
 
-" colorscheme everforest
+colorscheme everforest
 " colorscheme solarized8_dark_high
-colorscheme elly
+" colorscheme elly
 " colorscheme gruvbox
 
 " colorscheme gruvbox
@@ -53,8 +53,9 @@ autocmd FileType yaml,helm setlocal ts=2 sts=2 sw=2 expandtab
 
 
 " Don't automatically collapse markdown
-" set conceallevel=0
-set conceallevel=3
+set conceallevel=0
+" set conceallevel=3
+"
 
 " Don't display mode in command line (airline already shows it)
 set noshowmode

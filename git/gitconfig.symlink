@@ -16,7 +16,7 @@
         ui = true
 [core]
         excludesfile = ~/.gitignore_global
-        editor = nano
+	editor = nvim
 [apply]
         whitespace = nowarn
 [mergetool]

@@ -83,15 +83,13 @@ Plug 'junegunn/goyo.vim'
 " Plug 'vimwiki/vimwiki'
 
 " integrate vimwiki with taskwarrior
-Plug 'tbabej/taskwiki'
+" Plug 'tbabej/taskwiki'
 
 " todo.txt
 Plug 'freitass/todo.txt-vim'
 
 " todoist
 Plug 'romgrk/todoist.nvim', { 'do': ':TodoistInstall' }
-
-
 
 "Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
@@ -152,6 +150,8 @@ let g:ale_linters_explicit = 1
 
 " for websockets, needed by vim-hydra-eval
 Plug 'dhleong/vim-wildwildws', {'do': 'npm i -g wildwildws-d'}
+
+Plug 'wellle/context.vim'
 
 Plug 'github/copilot.vim'
 
