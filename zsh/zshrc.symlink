@@ -76,26 +76,6 @@ autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
   compinit
 done
-# compinit -C
-# autoload -Uz compinit
-# compinit
-# Completion for kitty
-# kitty + complete setup zsh | source /dev/stdin
-
-# pywal theme
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-# (cat ~/.cache/wal/sequences &)
-
-# Alternative (blocks terminal for 0-3ms)
-# cat ~/.cache/wal/sequences
-
-# To add support for TTYs this line can be optionally added.
-# source ~/.cache/wal/colors-tty.sh
-
-# set pywal colors to env vars
-# . ~/.cache/wal/colors.sh
 
 
 # fzf
@@ -107,9 +87,6 @@ export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 # init fasd
 eval "$(fasd --init auto)"
 
-
-# export EDITOR="emacsclient -nw -a ''"
-# export EDITOR="emacs-nw"
 export EDITOR="nvim"
 
 # source cargo
@@ -117,29 +94,12 @@ export EDITOR="nvim"
 
 export PATH=$PATH:~/.cargo/bin
 
-# add GO to path (for macos)
-#export GOPATH=$HOME/go
-#export GOROOT=/usr/local/opt/go/libexec
-#export PATH=$PATH:$GOPATH/bin
-#export PATH=$PATH:$GOROOT/bin
-
-#( for linux)
-export PATH=$PATH:/usr/local/go/bin
 export GOPATH="$HOME/go"
 PATH="$GOPATH/bin:$PATH"
-# export PATH=$PATH:$HOME/go
-# export PATH=$PATH:$HOME/go/bin
 
-
-# linkerd
-export PATH=$PATH:$HOME/.linkerd2/bin
 
 # linuxbrew
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+# export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 
 
-# PROMPT='$(kube_ps1)'$PROMPT
-# PROMPT='$(PROMPTedge)@$EDGE_DEV_MODE'
-export PATH="$PATH:/home/csweeney/.deno/bin"
 
-# export TODOIST_API_KEY="$(pass Todoist/API)"
