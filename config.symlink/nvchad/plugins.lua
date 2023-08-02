@@ -55,7 +55,9 @@ local plugins = {
   { "dhruvasagar/vim-table-mode", ft = "markdown" },
 
   { "francoiscabrol/ranger.vim",  cmd = "Ranger" },
-  -- { "github/copilot.vim", lazy=false},
+  -- dependency for ranger to prevent showing proscess exited error
+  -- and allows to ctrl-6 work to go to prev buffer after selecting via ranger
+  {"rbgrouleff/bclose.vim", cmd = "Bclose" },
   --
   -- https://www.reddit.com/r/neovim/comments/13bd75d/copilotlua_copilotcmp_working_in_nvchad/
   {
