@@ -22,7 +22,7 @@ joplin/resources
 # don't include nvim, we install nvchad and symlink our custom config into nvim dir
 !config.symlink/nvchad
 # # include nvim
-# !config.symlink/nvim/
+!config.symlink/nvim/
 
 config.symlink/nvim/.netrwhist
 
