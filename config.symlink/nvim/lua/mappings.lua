@@ -1,6 +1,5 @@
 require "nvchad.mappings"
 
-
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
@@ -52,7 +51,10 @@ map("n", "<leader>sp", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
 
 --- obsidian
 
-map("n", "<leader>ww", function()
-  require("functions").open_daily_note()
-end, { desc = "Open daily note" })
+map("n", "<leader>ww", "<cmd> ObsidianToday<CR>", { desc = "Obsidian Open daily note" })
+map("n", "<leader><C-P>", "<cmd> ObsidianQuickSwitch<CR>", { desc = "Obsidian Quick switch" })
+map("n", "<leader>of", "<cmd> ObsidianSearch<CR>", { desc = "Obsidian search" })
 
+-- map("n", "<leader>ww", function()
+--   -- require("functions").open_daily_note()
+-- end, { desc = "Open daily note" })
