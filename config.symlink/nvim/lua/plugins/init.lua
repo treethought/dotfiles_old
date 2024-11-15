@@ -8,6 +8,21 @@ return {
       require "configs.conform"
     end,
   },
+  "nvm-lua/plenary.nvim",
+  {
+    "nvchad/ui",
+    config = function()
+      require "nvchad"
+    end,
+  },
+  {
+    "nvchad/base46",
+    lazy = true,
+    build = function()
+      require("base46").load_all_highlights()
+    end,
+  },
+  "nvchad/volt",
 
   -- examples
   -- {
@@ -80,19 +95,22 @@ return {
   },
 
   -- Install a plugin
-  {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
+  -- {
+  --   "max397574/better-escape.nvim",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("better_escape").setup()
+  --   end,
+  -- },
   { "dhruvasagar/vim-table-mode", ft = "markdown" },
 
-  { "francoiscabrol/ranger.vim", cmd = "Ranger" },
+  { "francoiscabrol/ranger.vim",  cmd = "Ranger" },
   -- dependency for ranger to prevent showing proscess exited error
   -- and allows to ctrl-6 work to go to prev buffer after selecting via ranger
-  { "rbgrouleff/bclose.vim", cmd = "Bclose" },
+  { "rbgrouleff/bclose.vim",      cmd = "Bclose" },
+
+  -- comments
+  { "numToStr/Comment.nvim",      event = "InsertEnter" },
   --
   -- https://www.reddit.com/r/neovim/comments/13bd75d/copilotlua_copilotcmp_working_in_nvchad/
   {
@@ -225,21 +243,30 @@ return {
       "hrsh7th/nvim-cmp",
     },
     opts = {
-      -- workspaces = {
-      --   {
-      --     name = "personal",
-      --     path = "~/vaults/personal",
-      --   },
-      --   {
-      --     name = "work",
-      --     path = "~/vaults/work",
-      --   },
-      -- },
-      dir = "~/quartz/content",
+      workspaces = {
+        {
+          name = "garden",
+          path = "~/garden/content",
+        },
+        -- {
+        --   name = "work",
+        --   path = "~/vaults/work",
+        -- },
+      },
+      -- dir = "~/garden/content",
+
+      -- Optional, for templates (see below).
+      templates = {
+        folder = "templates",
+        -- date_format = "%Y-%m-%d",
+        -- time_format = "%H:%M",
+        -- -- A map for custom variables, the key should be the variable and the value a function
+        -- substitutions = {},
+      },
       daily_notes = {
         folder = "journal",
-        date_format = "%Y-%m-%d",
-        template = "templates/daily_note.md",
+        date_format = "gggg-[W]ww",
+        template = "templates/week_2.md",
       },
       completion = {
         nvim_cmp = true,
@@ -271,6 +298,26 @@ return {
       new_notes_location = "notes_subdir",
 
       -- see below for full list of options 👇
+    },
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    lazy = true,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    -- setting the keybinding for LazyGit with 'keys' is recommended in
+    -- order to load the plugin when the command is run for the first time
+    keys = {
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
   },
 

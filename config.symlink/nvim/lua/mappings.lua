@@ -2,8 +2,11 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
+-- remove default leader+b for new buffer mapping
+vim.keymap.del("n", "<leader>b")
+
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
+-- map("i", "jk", "<ESC>")
 
 -- bs for save
 map("n", "<leader>bs", "<cmd> w <CR>", { desc = "Save file" })

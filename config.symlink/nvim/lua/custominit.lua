@@ -19,6 +19,12 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+vim.filetype.add({
+ extension = {
+  templ = "templ",
+ },
+})
+
 -- Auto resize panes when resizing nvim window
 -- autocmd("VimResized", {
 --   pattern = "*",
