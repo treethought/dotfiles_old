@@ -51,13 +51,15 @@ map("n", "<leader>ff", function()
 end, { desc = "Find files" })
 
 map("n", "<leader>sp", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
+map("n", "<leader><C-p>", "<cmd> Telescope commands <CR>", { desc = "Telescope commands" })
 
 --- obsidian
 
 map("n", "<leader>ww", "<cmd> ObsidianToday<CR>", { desc = "Obsidian Open daily note" })
-map("n", "<leader><C-P>", "<cmd> ObsidianQuickSwitch<CR>", { desc = "Obsidian Quick switch" })
+map("n", "<leader><C-o>", "<cmd> ObsidianQuickSwitch<CR>", { desc = "Obsidian Quick switch" })
 map("n", "<leader>of", "<cmd> ObsidianSearch<CR>", { desc = "Obsidian search" })
+map("n", "<leader>oa", "<cmd> ObsidianOpen<CR>", { desc = "Obsidian open in app" })
 
 -- map("n", "<leader>ww", function()
---   -- require("functions").open_daily_note()
+--   require("functions").open_daily_note_float()
 -- end, { desc = "Open daily note" })

@@ -60,7 +60,7 @@ return {
     dependencies = {
       -- format & linting
       {
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         config = function()
           require "configs.null-ls"
         end,
@@ -228,8 +228,8 @@ return {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
     lazy = true,
-    ft = "markdown",
-    event = InsertEnter,
+    -- ft = "markdown",
+    event = "InsertEnter",
     -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
     -- event = {
     --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
@@ -246,7 +246,7 @@ return {
       workspaces = {
         {
           name = "garden",
-          path = "~/garden/content",
+          path = "~/quartz/content"
         },
         -- {
         --   name = "work",
@@ -254,6 +254,8 @@ return {
         -- },
       },
       -- dir = "~/garden/content",
+
+      use_advanced_uri = true,
 
       -- Optional, for templates (see below).
       templates = {
@@ -265,9 +267,16 @@ return {
       },
       daily_notes = {
         folder = "journal",
-        date_format = "gggg-[W]ww",
-        template = "templates/week_2.md",
+        date_format = "%Y-%m-%d",
+        template = "templates/daily_note",
       },
+      follow_url_func = function(url)
+        -- Open the URL in the default web browser.
+        vim.fn.jobstart({ "open", url }) -- Mac OS
+        -- vim.fn.jobstart({"xdg-open", url})  -- linux
+        -- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
+        -- vim.ui.open(url) -- need Neovim 0.10.0+
+      end,
       completion = {
         nvim_cmp = true,
         min_chars = 2,
