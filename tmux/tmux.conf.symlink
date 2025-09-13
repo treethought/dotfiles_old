@@ -11,6 +11,9 @@ bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "xclip -i -f -selec
 bind-key -T copy-mode-vi 'v' send -X begin-selection
 bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 
+set-option -s set-clipboard off
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -selection clipboard -i"
+
 # vim like pane switching
 bind h select-pane -L
 bind j select-pane -D
@@ -19,6 +22,7 @@ bind l select-pane -R
 
 # Mouse support
 set -g mouse on
+
 
 # 256 color support
 set -g default-terminal "screen-256color"

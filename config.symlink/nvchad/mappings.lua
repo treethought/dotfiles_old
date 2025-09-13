@@ -1,3 +1,5 @@
+require "nvchad.mappings"
+
 ---@type MappingsTable
 local M = {}
 
@@ -53,6 +55,12 @@ end
 M.general = {
 
 	n = {
+    ["<leader>to"] = {
+			function()
+				require("base46").toggle_transparency()
+			end,
+			"Toggle comment",
+		},
 		-- save
 		["<leader>bs"] = { "<cmd> w <CR>", "Save file" },
 		-- open daily note

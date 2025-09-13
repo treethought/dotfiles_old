@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "tidal" },
 	callback = function()
-		vim.bo.commentstring = "--%s"
+		vim.bo.commentstring = "-- %s"
 	end,
 })
 
